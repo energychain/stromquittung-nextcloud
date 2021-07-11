@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>stromquittung</id>
+    <name>StromQuittung</name>
+    <summary>StromQuittung erstellen und nutzen in Nextcloud</summary>
+    <description lang="de"><![CDATA[
+# StromQuittung für nextcloud
+
+Abrechnung von Stromlieferungen an Dritte einfach erstellen in Nextcloud. Hauptanwendungsfall ist die Erstellung einer Abrechnung für den Arbeitgeber (*Laden zu Hause*) bei E-Auto Fahrern, oder das Laden von Freunden/Nachbarn an einer heimischen Wallbox. Die Eigentliche
+ Erstellung des Beleges (Quittung) erfolgt über das Corrently Ökosystem (Online-Dienst) auf Basis eines Technischen Sicherheitseinrichtung Services (TSE).
+
+Wird eine Quittung erstellt, so wird diese im Nutzerverzeichnis als PDF Dokument abgelegt. Die Vorgabewerte (Name, E-Mail) werden aus dem Profil übernommen und vorausgefüllt.
+
+## REST API
+
+Neben der manuellen Erfassung der Daten kann über eine einfache REST-API die Daten des Beleges auch aus einer Heimautomatisierung/EnergieManagement System bereitgestellt werden.
+
+`https://[nextcloud-root]/apps/stromquittung/addTransaction?tx_energy=10.123&tx_duration=20`
+
+`tx_energy=10.123` für 10,123 KiloWattStunden
+`tx_duration=20` für 20 Minuten
+
+Bei der Nutzung aus einer externen Anwendung (SmartHome,EnergieManagement,...) wird empfohlen ein App-Passwort für den Nutzer in Nextcloud zu erstellen und dessen Login-Daten mittels Basic-Authentication mitzugeben.
+
+### CURL Beispie
+`curl "http://benutzer:passwort@localhost:8080/nextcloud/apps/stromquittung/addTransaction?tx_energy=10&tx_duration=20"`
+
+      ]]></description>
+    <version>0.9.1</version>
+    <licence>agpl</licence>
+    <author mail="kontakt@stromdao.com" homepage="https://corrently.de/">STROMDAO GmbH</author>
+    <namespace>StromQuittung</namespace>
+    <category>tools</category>
+    <bugs>https://premium.corrently.de/</bugs>
+    <dependencies>
+        <nextcloud min-version="19" max-version="22"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Strom Quittung</name>
+            <route>stromquittung.page.index</route>
+        </navigation>
+    </navigations>
+</info>

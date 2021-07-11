@@ -1,0 +1,15 @@
+{
+    "name": "corrently/stromquittung",
+    "description": "StromQuittung erstellen und nutzen in Nextcloud",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "STROMDAO GmbH"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}
