@@ -90,7 +90,7 @@ class PageController extends Controller {
 
 		 return new DataResponse([
 				 'userId' => 	$this->userId,
-				 'file_name' => $fnamey,
+				 'file_name' => $fname,
 				 'tx_number' => $this->config->getAppValue($this->appName, "tx_number")
 	 		]);
 	}
