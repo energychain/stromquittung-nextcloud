@@ -27,7 +27,10 @@ Bei der Nutzung aus einer externen Anwendung (SmartHome,EnergieManagement,...) w
 `curl "http://benutzer:passwort@localhost:8080/nextcloud/apps/stromquittung/addTransaction?tx_energy=10&tx_duration=20"`
 
       ]]></description>
-    <version>0.9.1</version>
+    <description lang="en">
+      Only suitable for use in Germany. - Creates an energy receipt for third party energy delivery (as seen on private wallboxes).
+    </description>
+    <version>1.0.0</version>
     <licence>agpl</licence>
     <author mail="kontakt@stromdao.com" homepage="https://corrently.de/">STROMDAO GmbH</author>
     <namespace>StromQuittung</namespace>
